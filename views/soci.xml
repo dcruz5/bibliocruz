@@ -1,0 +1,61 @@
+<odoo>
+  <data>
+    <!-- Form view -->
+    <record model="ir.ui.view" id="bibliocruz.soci_form_view">
+      <field name="name">bibliocruz.soci.form</field>
+      <field name="model">res.users</field>
+      <field name="arch" type="xml">
+        <form string="Formulari de soci">
+          <sheet>
+            <group>
+              <group>
+                  <separator string="Dades personals"/>
+                  <field name="name"/>
+                  <field name="cognoms"/>
+                  <field name="data_naixement" widget="date"/>
+                  <field name="edat" readonly="1"/>
+              </group>                            
+              <group>
+                  <separator string="Altres dades"/>
+                  <field name="es_soci"/>
+                  <field name="num_carnet"/>
+                  <field name="mobile"/>
+                  <field name="login"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- list view  -->
+    <record model="ir.ui.view" id="bibliocruz.soci_tree_view">
+      <field name="name">bibliocruz.soci.tree</field>
+      <field name="model">res.users</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="num_carnet"/>
+          <field name="email"/>
+          <field name="mobile"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="bibliocruz.action_window_soci">
+      <field name="name">bibliocruz window</field>
+      <field name="res_model">res.users</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('es_soci', '=', 'True')]</field>
+      <field name="view_ids" eval="[(5, 0, 0),
+      (0, 0, {'view_mode': 'tree', 'view_id': ref('bibliocruz.soci_tree_view')}),
+      (0, 0, {'view_mode': 'form', 'view_id': ref('bibliocruz.soci_form_view')})]"/>
+    </record>
+
+    <!-- actions -->
+    <menuitem name="Llistat de socis" id="bibliocruz.menu_list_soci" parent="bibliocruz.menu"
+    action="bibliocruz.action_window_soci"/>
+  </data>
+</odoo>

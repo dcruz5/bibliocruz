@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+    <record id="llibre_1" model="product.product">
+      <field name="name">El Misteri de la Biblioteca</field>
+      <field name="description">Un llibre de misteri.</field>
+      <field name="isbn">978-1-234567-89-0</field>
+      <field name="genero">misteri</field>
+      <field name="editor">Edicions 62</field>
+      <field name="data_publicacio">2020-01-15</field>
+      <field name="disponible">True</field>
+    </record>
+
+    <record id="llibre_2" model="product.product">
+      <field name="name">Aventures a l'Illa</field>
+      <field name="description">Una aventura fascinant.</field>
+      <field name="isbn">978-0-987654-32-1</field>
+      <field name="genero">aventura</field>
+      <field name="editor">Editorial Planeta</field>
+      <field name="data_publicacio">2019-05-22</field>
+      <field name="disponible">True</field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,70 @@
+<odoo>
+  <data>
+    <!-- Form view -->
+    <record model="ir.ui.view" id="bibliocruz.llibre_form_view">
+      <field name="name">bibliocruz.llibre.form</field>
+      <field name="model">product.product</field>
+      <field name="arch" type="xml">
+        <form string="Formulari de llibre">
+          <sheet>
+            <group>
+              <group>
+                <field name="name" />
+                <field name="description" string="Sipnosis" />
+                <field name="editor" />
+                <field name="data_publicacio" />
+              </group>
+              <group>
+                <field name="isbn" />
+                <field name="disponible" />
+                <field name="active" />
+                <field name="image_512" widget="image" string="Portada" />
+              </group>
+            </group>
+            <notebook>
+              <page string="Autors">
+                <field name="autor_ids">
+                  <tree>
+                    <field name="name" />
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- list view  -->
+    <record model="ir.ui.view" id="bibliocruz.llibre_tree_view">
+      <field name="name">bibliocruz.llibre.tree</field>
+      <field name="model">product.product</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="image_512" widget="image" />
+          <field name="name" />
+          <field name="autor_ids" widget="many2many_tags" />
+          <field name="editor" />
+          <field name="data_publicacio" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="bibliocruz.action_window_llibre">
+      <field name="name">bibliocruz.llibre</field>
+      <field name="res_model">product.product</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_ids"
+        eval="[(5, 0, 0),
+      (0, 0, {'view_mode': 'tree', 'view_id': ref('bibliocruz.llibre_tree_view')}),
+      (0, 0, {'view_mode': 'form', 'view_id': ref('bibliocruz.llibre_form_view')})]" />
+    </record>
+
+    <!-- actions -->
+    <menuitem name="List de llibres" id="bibliocruz.menu_list_llibre" parent="bibliocruz.menu"
+      action="bibliocruz.action_window_llibre" />
+
+  </data>
+</odoo>

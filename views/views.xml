@@ -1,0 +1,13 @@
+<odoo>
+  <data>
+    <!-- Top menu item -->
+    <menuitem name="bibliocruz" id="bibliocruz.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Gestió" id="bibliocruz.menu" parent="bibliocruz.menu_root"/>
+<!--
+    <menuitem name="Menu 1" id="bibliocruz.menu_1" parent="bibliocruz.menu_root"/>
+    <menuitem name="Menu 2" id="bibliocruz.menu_2" parent="bibliocruz.menu_root"/>
+-->
+  </data>
+</odoo>

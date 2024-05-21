@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <record id="registre_1" model="bibliocruz.registre">
+      <field name="soci_id" ref="soci_1"/>
+      <field name="llibre_id" ref="llibre_1"/>
+      <field name="data_prestec">2024-05-01</field>
+    </record>
+
+    <record id="registre_2" model="bibliocruz.registre">
+      <field name="soci_id" ref="soci_2"/>
+      <field name="llibre_id" ref="llibre_2"/>
+      <field name="data_prestec">2024-04-20</field>
+    </record>
+  </data>
+</odoo>

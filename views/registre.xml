@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+    <record id="bibliocruz.kanban_registre_view" model="ir.ui.view">
+      <field name="name">bibliocruz.registre.kanban</field>
+      <field name="model">bibliocruz.registre</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile" sample="1">
+          <field name="name"/>
+          <field name="soci_id"/>
+          <field name="llibre_ids"/>
+          <field name="num_llibres"/>
+          <field name="data_registre"/>
+          <field name="data_retorn"/>
+          <field name="estat"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_details">
+                <strong><field name="name"/></strong>
+                <div><field name="soci_id"/></div>
+                <div><field name="estat"/></div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- list view -->
+    <record model="ir.ui.view" id="bibliocruz.registre_tree_view">
+      <field name="name">bibliocruz.registre.tree</field>
+      <field name="model">bibliocruz.registre</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="observacions"/>
+          <field name="data_registre"/>
+          <field name="estat"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="bibliocruz.action_window_registre">
+      <field name="name">bibliocruz.registre</field>
+      <field name="res_model">bibliocruz.registre</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- actions -->
+    <menuitem name="Llistat de registre" id="bibliocruz.menu_list_registre" parent="bibliocruz.menu" action="bibliocruz.action_window_registre"/>
+  </data>
+</odoo>
