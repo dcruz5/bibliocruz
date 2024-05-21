@@ -1,13 +1,13 @@
 <odoo>
-  <data>
+  <data noupdate="1">
     <record id="soci_1" model="res.users">
       <field name="name">Joan Garcia</field>
       <field name="cognoms">Pérez</field>
       <field name="data_naixement">1985-04-12</field>
       <field name="es_soci">True</field>
       <field name="num_carnet">123450</field>
-      <field name="login">joan.garcia@example.com</field>
-      <field name="password">password123</field>
+      <field name="login">joangarcia</field>
+      <field name="email">joangarcia@example.com</field>
     </record>
 
     <record id="soci_2" model="res.users">
@@ -16,8 +16,8 @@
       <field name="data_naixement">1990-08-25</field>
       <field name="es_soci">True</field>
       <field name="num_carnet">134567</field>
-      <field name="login">maria.lopez@example.com</field>
-      <field name="password">password123</field>
+      <field name="login">malopez</field>
+      <field name="email">mlopez@example.com</field>
     </record>
   </data>
 </odoo>

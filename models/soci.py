@@ -21,6 +21,6 @@ class soci(models.Model):
     @api.depends('data_naixement')
     def _compute_edat(self):
         for estudiant in self:
-            if estudiant.birthday:
-                estudiant.edat = relativedelta(datetime.today(), estudiant.birthday).years
+            if estudiant.data_naixement:
+                estudiant.edat = relativedelta(datetime.today(), estudiant.data_naixement).years
 

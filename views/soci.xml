@@ -45,7 +45,7 @@
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="bibliocruz.action_window_soci">
-      <field name="name">bibliocruz window</field>
+      <field name="name">Llistat de socis</field>
       <field name="res_model">res.users</field>
       <field name="view_mode">tree,form</field>
       <field name="domain">[('es_soci', '=', 'True')]</field>

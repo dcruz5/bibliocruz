@@ -6,7 +6,7 @@
     'website': "https://github.com/dcruz5/bibliocruz",
     'category': 'Tools',
     'version': '0.1',
-    'depends': ['base','product','mail'],
+    'depends': ['base','product','mail', 'sale'],   
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
@@ -16,9 +16,8 @@
     ],
     'demo': [
         'demo/soci_demo.xml',
-        # 'demo/llibre_demo.xml', # not working...
-        'demo/registre_demo.xml',
-    ],
-    'installable': True,
+        'demo/llibre_demo.xml', # not working...
+        #'demo/registre_demo.xml',
+    ]
 }
 
